@@ -29,6 +29,8 @@ nav ul {
 nav ul li a {
   color: white;
   text-decoration: none;
+  width: 100%;
+  height: 100%;
 }
 
 section#main-content {
