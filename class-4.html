@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>咸水沽第四中学 808班</title>
+  <link rel="stylesheet" type="text/css" href="808start.css" />
+
+  <style>
+    section#main-content {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      gap: 20px;
+    }
+
+    article h2 {
+      color: #00FFFF;
+    }
+
+    #announcement-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    section#announcement-board-left,
+    section#announcement-board-right {
+      width: 48%;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      gap: 10px;
+  
+    }
+
+    section#announcement-board-right {
+         margin-left: 15px;
+    }
+
+    section#announcement-board-left h2,
+    section#announcement-board-right h2 {
+      color: #00FFFF;
+      margin-top: 0;
+      grid-row: 1 / 2;
+    }
+
+    section#announcement-board-left ul,
+    section#announcement-board-right ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      grid-row: 2 / 3;
+    }
+
+    section#announcement-board-left ul li,
+    section#announcement-board-right ul li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 5px;
+    }
+
+    section#announcement-board-left ul li:last-child,
+    section#announcement-board-right ul li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    section#announcement-board-left ul li h3,
+    section#announcement-board-right ul li h3 {
+      color: #00FFFF;
+      grid-row: 1 / 2;
+    }
+
+    section#announcement-board-left ul li p.date,
+    section#announcement-board-right ul li p.date {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      grid-row: 3 / 4;
+    }
+
+    section#announcement-board-left ul li p,
+    section#announcement-board-right ul li p {
+      grid-row: 2 / 3;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>咸四中 808</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="https://grade8-class8-website.github.io/">首页</a></li>
+      <li><a href="class-2.html">班级介绍</a></li>
+      <li><a href="class-3.html">班级公告板</a></li>
+      <li><a href="class-4.html">网络热词</a></li>
+    </ul>
+  </nav>
+  <section id="main-content">
+    <article>
+             <div id="announcement-container">
+      <div id="announcement-board-left">
+        <h2>重要公告板</h2>
+        <ul id="announcement-list-left">
+          <li>
+            <h3>重要通知</h3>
+            <p>这周五 3点放学，注意时间，详细时间请移步家长群</p>
+            <p class="date">发布日期：2024 年 10 月 14 日</p>
+          </li>
+        </ul>
+      </div>
+      <div id="announcement-board-right">
+        <h2>活动公告板</h2>
+        <ul id="announcement-list-right">
+          <li>
+            <h3>期中考试</h3>
+            <p>下下周将进行期中考试，详情请关注后续通知。</p>
+            <p class="date">发布日期：2024 年 10 月 16 日</p>
+          </li>
+        </ul>
+      </div>
+             </div>
+    </article>
+  </section>
+  <footer>
+    <p>版权所有 &copy; 808 2024</p>
+  </footer>
+</body>
+
+</html>
