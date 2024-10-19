@@ -85,12 +85,13 @@ footer {
   left: 0;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  width: 5px;
+  width: 10px;
 }
 
 .conputer-open-bar .center-div{
   background-color: rgb(72, 69, 60)
   height: 180px;
+  width: 5px;
   top: calc(100vh - 180px);
   left: 3px;
 }
