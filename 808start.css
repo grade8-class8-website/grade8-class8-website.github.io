@@ -124,6 +124,6 @@ div#side-bar:hover{
     --mobile-media: block;
     --computer-media: none;
   }
-  #side-bar:target{width: 50%;  transition: width 2s;}
+  #side-bar:target{display: block;}
 }
 
