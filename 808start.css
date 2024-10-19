@@ -46,3 +46,31 @@ footer {
   text-align: center;
   padding: 10px;
 }
+
+#side-bar {
+  -ms-scroll-chaining: none;
+  position: sticky;
+  width: 30%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0;
+  border: none;
+  background-position: top, bottom, top, bottom -0.25rem left;
+  background-size: 100% 3rem, 100% 3rem, 100% 1.5rem, var(--sidebar-width-on-desktop) 1.5rem;
+  background-repeat: no-repeat;
+  background-attachment: local, local, scroll, fixed;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.mobile-top-bar{display: none;}
+#side-bar{display: none;}
+@media only screen and (max-width: 768px) {
+    .mobile-top-bar{display: block;}
+    #side-bar:target{display: block}
+    
+}
+
