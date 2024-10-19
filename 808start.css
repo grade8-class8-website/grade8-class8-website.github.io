@@ -110,6 +110,7 @@ footer {
 div#side-bar:hover{
   display: block;
   width: 50%;
+  transition: width 2s;
 }
 
 .mobile-top-bar,
@@ -121,6 +122,6 @@ div#side-bar:hover{
     --mobile-media: block;
     --computer-media: none;
   }
-  #side-bar:target{width: 50%;}
+  #side-bar:target{width: 50%;  transition: width 2s;}
 }
 
