@@ -108,7 +108,6 @@ footer {
   display: block;
 }
 
-.close-menu:hover + .side-block,
 .mobile-top-bar,
 #side-bar{
   display: none;
