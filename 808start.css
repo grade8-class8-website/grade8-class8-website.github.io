@@ -66,11 +66,9 @@ footer {
   overflow-y: auto;
 }
 
-.mobile-top-bar{display: none;}
-#side-bar{display: none;}
+.mobile-top-bar,#side-bar{display: none;}
 @media only screen and (max-width: 768px) {
     .mobile-top-bar{display: block;}
     #side-bar:target{display: block}
-    
 }
 
