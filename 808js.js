@@ -13,3 +13,5 @@ function get_set() {
   r.style.setProperty('--side-bar-height', bodyH);
 }
 
+get_set()
+
