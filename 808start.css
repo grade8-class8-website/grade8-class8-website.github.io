@@ -67,6 +67,7 @@ footer {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
 .close-menu{
   right: 0;
   top: 0;
@@ -81,6 +82,7 @@ footer {
   display: none;
 }
 .mobile-top-bar,#side-bar{display: none;}
+.close-menu:has(+ #side-bar:target){display: block;}
 @media only screen and (max-width: 768px) {
     .mobile-top-bar{display: block;}
     #side-bar:target{display: block}
