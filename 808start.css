@@ -2,7 +2,7 @@
   --side-bar-width: 10px;
   --side-bar-height: 100vh;
   --side-bar-C-inner-W: var(--side-bar-width);
-  --sid-bar-C-inner-H: 220px;
+  --side-bar-C-inner-H: 220px;
   --side-bar-monochrome: 32,0,255;
   --body-monochrome: 0,123,255;
   --header-monochrome: 0,86,179;
@@ -104,7 +104,8 @@ footer {
   border-bottom-right-radius: 8px;
 }
 
-.computer-open-bar:hover + a + div#side-bar{
+.computer-open-bar:hover + a + div#side-bar,
+div#side-bar:hover{
   display: block;
 }
 
