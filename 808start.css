@@ -61,7 +61,6 @@ footer {
 .relative{position: relative;}
 .absolute{position: absolute;}
 .side-block {
-  -ms-scroll-chaining: none;
   width: 50%;
   top: 0;
   left: 0;
@@ -95,7 +94,7 @@ footer {
 }
 
 .computer-open-bar .center-div{
-  background-color: rgb(var(--gray-monochorme));
+  background-color: rgb(var(--gray-monochrome));
   height: var(--side-bar-C-inner-H);
   width: var(--side-bar-C-inner-W);
   top: calc(var(--side-bar-height)/2 - var(--side-bar-C-inner-H));
