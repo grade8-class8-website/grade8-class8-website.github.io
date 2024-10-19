@@ -62,7 +62,7 @@ footer {
 .relative{position: relative;}
 .absolute{position: absolute;}
 .side-block {
-  width: 0;
+  width: 50%;
   top: 0;
   left: 0;
   z-index: 9;
