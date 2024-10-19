@@ -74,6 +74,7 @@ footer {
   overflow-y: auto;
   transform: translateX(var(--side-bar-width)*2);
   transition: transform 2s;
+  padding: 5px;
 }
 
 .close-menu{
