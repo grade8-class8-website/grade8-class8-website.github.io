@@ -73,7 +73,8 @@ footer {
   height: var(--side-bar-height);
   overflow-x: hidden;
   overflow-y: auto;
-  transition: width 2s;
+  transform: translateX(var(--side-bar-width)*2);
+  transition: transform 2s;
 }
 
 .close-menu{
@@ -110,14 +111,9 @@ footer {
 div#side-bar:hover{
   display: block;
   width: 50%;
-  animation: width 2s forwards;
+  transform: translateX(0);
 }
 
-@keyframes width{
-  to{
-    width: 50%;
-  }
-}
 
 .mobile-top-bar,
 #side-bar{
