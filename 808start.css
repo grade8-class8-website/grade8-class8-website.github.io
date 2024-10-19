@@ -89,7 +89,7 @@ footer {
 }
 
 .conputer-open-bar .center-div{
-  background-color: rgb(72, 69, 60)
+  background-color: rgb(72, 69, 60);
   height: 180px;
   width: 5px;
   top: calc(100vh - 180px);
