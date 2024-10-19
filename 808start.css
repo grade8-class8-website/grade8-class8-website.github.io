@@ -7,6 +7,8 @@
   --body-monochrome: 0,123,255;
   --header-monochrome: 0,86,179;
   --nav-monochrome: 0,98,204;
+  --gray-monochrome: 72, 69, 60;
+  --black-monochrome: 25, 20, 16;
 }
 body {
   font-family: Arial, sans-serif;
@@ -93,7 +95,7 @@ footer {
 }
 
 .computer-open-bar .center-div{
-  background-color: rgb(72, 69, 60);
+  background-color: rgb(var(--gray-monochorme));
   height: var(--side-bar-C-inner-H);
   width: var(--side-bar-C-inner-W);
   top: calc(var(--side-bar-height)/2 - var(--side-bar-C-inner-H));
