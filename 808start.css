@@ -47,9 +47,10 @@ footer {
   padding: 10px;
 }
 
+.relative{position: relative;}
+.absolute{position: absolute;}
 #side-bar {
   -ms-scroll-chaining: none;
-  position: sticky;
   width: 30%;
   top: 0;
   left: 0;
