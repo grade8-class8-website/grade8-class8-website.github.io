@@ -65,7 +65,7 @@ footer {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  border-left: 2px solid red;
+  border-right: 2px solid red;
 }
 
 .mobile-top-bar,#side-bar{display: none;}
