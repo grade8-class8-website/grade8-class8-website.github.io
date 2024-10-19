@@ -72,6 +72,9 @@ footer {
   top: 0;
   width: 50%;
   height: 100vh;
+  background-color: #000;
+  opacity: 0.3;
+  display: none;
 }
 
 .close-menu:hover + #side-bar{
@@ -81,5 +84,6 @@ footer {
 @media only screen and (max-width: 768px) {
     .mobile-top-bar{display: block;}
     #side-bar:target{display: block}
+    .close-menu{display: block;}
 }
 
