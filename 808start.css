@@ -110,7 +110,13 @@ footer {
 div#side-bar:hover{
   display: block;
   width: 50%;
-  transition: width 2s;
+  animation: width 2s forwards;
+}
+
+@keyframes width{
+  to{
+    width: 50%;
+  }
 }
 
 .mobile-top-bar,
