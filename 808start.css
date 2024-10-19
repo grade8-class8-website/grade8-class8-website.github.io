@@ -51,7 +51,7 @@ footer {
 .absolute{position: absolute;}
 #side-bar {
   -ms-scroll-chaining: none;
-  width: 30%;
+  width: 50%;
   top: 0;
   left: 0;
   z-index: 9;
