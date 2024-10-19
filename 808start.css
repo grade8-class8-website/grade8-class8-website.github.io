@@ -104,7 +104,7 @@ footer {
   border-bottom-right-radius: 8px;
 }
 
-.computer-open-bar + a + div{
+.computer-open-bar:hover + a + div#side-bar{
   display: block;
 }
 
