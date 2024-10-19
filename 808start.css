@@ -20,7 +20,7 @@ body {
 }
 
 header {
-  background-color: rgb(var(--header-monochrome));
+  background: background: linear-gradient(rgb(var(--header-monochrome)), rgb(var(--nav-monochrome)));;
   text-align: center;
   padding: 20px;
 }
