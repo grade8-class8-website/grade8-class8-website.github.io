@@ -58,7 +58,7 @@ footer {
   transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0;
   border: none;
-  background-color: red;
+  background-color: #2000ff;
   background-position: top, bottom, top, bottom -0.25rem left;
   background-size: 100% 3rem, 100% 3rem, 100% 1.5rem, var(--sidebar-width-on-desktop) 1.5rem;
   background-repeat: no-repeat;
