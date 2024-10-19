@@ -2,6 +2,7 @@
   --side-bar-width: 10px;
   --side-bar-C-inner-W: var(--side-bar-width);
   --side-bar-C-inner-H: 220px;
+  --side-bar-vh: 100vh;
   --side-bar-monochrome: 32,0,255;
   --body-monochrome: 0,123,255;
   --header-monochrome: 0,86,179;
@@ -69,7 +70,7 @@ footer {
   margin: 0;
   border: none;
   background-color: rgb(var(--side-bar-monochrome));
-  height: var(--side-bar-height);
+  height: var(--side-bar-vh);
   overflow-x: hidden;
   overflow-y: auto;
   transform: translateX(var(--side-bar-width)*2);
@@ -81,14 +82,14 @@ footer {
   right: 0;
   top: 0;
   width: 50%;
-  height: var(--side-bar-height);
+  height: var(--side-bar-vh);
   opacity: 0.3;
   display: none;
 }
 
 .computer-open-bar{
   background: rgba(var(--black-monochrome),0.3);
-  height: var(--side-bar-height);
+  height: var(--side-bar-vh);
   top: 0;
   left: 0;
   border-top-right-radius: 8px;
