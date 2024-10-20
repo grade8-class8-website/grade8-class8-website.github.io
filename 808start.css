@@ -146,7 +146,7 @@ div#side-bar:hover{
   }
   #side-bar:target{
     display: block;
-    animation: left 1s forwards;
+    animation: var(--into) ease-in 1s forwards;
   }
 }
 
