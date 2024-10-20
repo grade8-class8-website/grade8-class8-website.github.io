@@ -25,17 +25,24 @@ pseudoForEach(sidebarcomputer, element => {
 
 
 function get_set() {
-    const tempDiv = document.createElement('div');
-    tempDiv.style.position = 'absolute';
-    tempDiv.style.visibility = 'hidden';
-    tempDiv.style.width = '1px';
-    tempDiv.style.height = 'auto';
-    document.body.appendChild(tempDiv);
-    const scrollHeight = tempDiv.scrollHeight + 'px';
-    document.body.removeChild(tempDiv);
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    const bodyScrollHeight = document.body.scrollHeight;
+    const htmlScrollHeight = document.documentElement.scrollHeight;
+    const scrollHeight = Math.max(bodyScrollHeight, htmlScrollHeight);
     const rootElement = document.querySelector(':root');
     rootElement.style.setProperty('--side-bar-height', scrollHeight);
-    console.log(scrollHeight)
+    console.log(scrollHeight);
 }
+
+window.addEventListener('resize', () => {
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    const bodyScrollHeight = document.body.scrollHeight;
+    const htmlScrollHeight = document.documentElement.scrollHeight;
+    const scrollHeight = Math.max(bodyScrollHeight, htmlScrollHeight);
+    const rootElement = document.querySelector(':root');
+    rootElement.style.setProperty('--side-bar-height', scrollHeight);
+    console.log(scrollHeight);
+});
+
 
 get_set()
