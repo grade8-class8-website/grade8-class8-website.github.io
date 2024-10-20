@@ -73,13 +73,16 @@ footer {
 .absolute{position: absolute;}
 
 #side-bar {
-  width: 40%;
+  width: 0;
   top: 0;
   left: 0;
   z-index: 9;
   margin: 0;
   border: none;
   background-color: rgb(var(--side-bar-monochrome));
+  opacity: 0;
+  color: transparent;
+  transition: width 1.2s ease-in;
   height: var(--side-bar-height);
   overflow-x: hidden;
   overflow-y: auto;
@@ -116,20 +119,13 @@ footer {
   border-bottom-right-radius: 8px;
 }
 
-@keyframes into{
-  0%{transform: translateX(calc(0 - var(--side-bar-width)*0.4));display: none;}
-  100%{transform: translateX(0);display: block;}
-}
 
-@keyframes leave{
-  0%{transform: translateX(0);display: block;}
-  100%{transform: translateX(calc(0 - var(--side-bar-width)*0.4));display: none;}
-}
 
 .computer-open-bar:hover + a + div#side-bar,
 div#side-bar:hover{
-  animation: var(--into) 1s ease-in forwards;
-  display: block;
+  width: 40%;
+  opacity: 1;
+  color: white;
 }
 
 
@@ -145,8 +141,9 @@ div#side-bar:hover{
     --computer-media: none;
   }
   #side-bar:target{
-    display: block;
-    animation: var(--into) ease-in 1s forwards;
+    width: 40%;
+    opacity: 1;
+    color: white;
   }
 }
 
