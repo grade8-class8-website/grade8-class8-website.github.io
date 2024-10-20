@@ -134,7 +134,6 @@ div#side-bar:hover{
   display: var(--mobile-media);
 }
 
-#side-bar{display: none;}
 @media only screen and (max-width: 768px) {
   :root{
     --mobile-media: block;
