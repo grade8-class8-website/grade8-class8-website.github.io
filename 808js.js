@@ -39,9 +39,9 @@ function get_set() {
     const htmlScrollHeight = document.documentElement.scrollHeight;
     const scrollHeight = Math.max(bodyScrollHeight, htmlScrollHeight);
     const rootElement = document.querySelector(':root');
+    const pageWidth = window.innerWidth;
     rootElement.style.setProperty('--side-bar-height', scrollHeight + 'px');
     rootElement.style.setProperty('--side-bar-width', pageWidth + 'px');
-    const pageWidth = window.innerWidth;
 }
 
 window.addEventListener('resize', () => {
@@ -50,9 +50,9 @@ window.addEventListener('resize', () => {
     const htmlScrollHeight = document.documentElement.scrollHeight;
     const scrollHeight = Math.max(bodyScrollHeight, htmlScrollHeight);
     const rootElement = document.querySelector(':root');
+    const pageWidth = window.innerWidth;
     rootElement.style.setProperty('--side-bar-height', scrollHeight + 'px');
     rootElement.style.setProperty('--side-bar-width', pageWidth + 'px');
-    const pageWidth = window.innerWidth;
 });
 
 
