@@ -60,9 +60,14 @@ footer {
   padding: 10px;
 }
 
+.mobile-top-bar a{
+  font-size: 24px;
+  font-weight: bolder;
+}
+
 .relative{position: relative;}
 .absolute{position: absolute;}
-.side-block {
+#side-bar {
   width: 50%;
   top: 0;
   left: 0;
