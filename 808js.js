@@ -1,5 +1,4 @@
 const sidebarcomputer = document.getElementsByClassName("computer-open-bar");
-const close = document.getElementById("close-menu")
 
 function sidebaropen() {
     document.getElementById("close-menu").style.display = "block";
@@ -26,8 +25,8 @@ pseudoForEach(sidebarcomputer, element => {
     });
 });
 
-pseudoForEach(close, element => {
-    element.addEventListener('click', function(event) {
+pseudoForEach(sidebarcomputer, element => {
+    element.addEventListener('mouseenter', function(event) {
         const rootElement = document.querySelector(':root');
         rootElement.style.setProperty('--into', 'into');
     });
