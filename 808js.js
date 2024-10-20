@@ -3,13 +3,13 @@ const sidebarcomputer = document.getElementsByClassName("computer-open-bar");
 function sidebaropen() {
     document.getElementById("close-menu").style.display = "block";
     const rootElement = document.querySelector(':root');
-    rootElement.style.setProperty('--into', 'leave');
+    rootElement.style.setProperty('--into', 'into');
 }
 
 function sidebarclose() {
     document.getElementById("close-menu").style.display = "none";
     const rootElement = document.querySelector(':root');
-    rootElement.style.setProperty('--into', 'into');
+    rootElement.style.setProperty('--into', 'leave');
 }
 
 function pseudoForEach(collection, callback) {
