@@ -1,6 +1,6 @@
 :root{
-  --side-bar-width: 10px;
-  --side-bar-C-inner-W: var(--side-bar-width);
+  --side-bar-other-width: 10px;
+  --side-bar-C-inner-W: var(--side-bar-other-width);
   --side-bar-C-inner-H: 220px;
   
   --side-bar-monochrome: 32,0,255;
@@ -102,7 +102,7 @@ footer {
   left: 0;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  width: var(--side-bar-width);
+  width: var(--side-bar-other-width);
   display: var(--computer-media);
 }
 
