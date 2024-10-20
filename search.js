@@ -109,13 +109,13 @@ function search() {
         results.forEach(item => {
           const resultItem = document.createElement('div');
           resultItem.classList.add('result-item');
-          const hotwordElement = document.createElement('span');
+          const hotwordElement = document.createElement('div');
           hotwordElement.classList.add('hotword');
           hotwordElement.textContent = item.key;
-          const explanationElement = document.createElement('span');
+          const explanationElement = document.createElement('div');
           explanationElement.classList.add('explanation');
           explanationElement.textContent = item.value.explanation;
-          const yearElement = document.createElement('span');
+          const yearElement = document.createElement('div');
           yearElement.classList.add('year');
           yearElement.textContent = item.value.year;
           resultItem.appendChild(hotwordElement);
