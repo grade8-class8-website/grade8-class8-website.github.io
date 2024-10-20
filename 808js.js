@@ -1,15 +1,16 @@
 const sidebarcomputer = document.getElementsByClassName("computer-open-bar");
+const close = document.getElementById("close-menu")
 
 function sidebaropen() {
     document.getElementById("close-menu").style.display = "block";
     const rootElement = document.querySelector(':root');
-    rootElement.style.setProperty('--into', 'into');
+    rootElement.style.setProperty('--into', 'leave');
 }
 
 function sidebarclose() {
     document.getElementById("close-menu").style.display = "none";
     const rootElement = document.querySelector(':root');
-    rootElement.style.setProperty('--into', 'leave');
+    rootElement.style.setProperty('--into', 'into');
 }
 
 function pseudoForEach(collection, callback) {
@@ -25,10 +26,10 @@ pseudoForEach(sidebarcomputer, element => {
     });
 });
 
-pseudoForEach(sidebarcomputer, element => {
-    element.addEventListener('mouseenter', function(event) {
+pseudoForEach(close, element => {
+    element.addEventListener('click', function(event) {
         const rootElement = document.querySelector(':root');
-        rootElement.style.setProperty('--into', 'enter');
+        rootElement.style.setProperty('--into', 'into');
     });
 });
 
