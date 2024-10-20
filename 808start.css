@@ -3,7 +3,7 @@
   --side-bar-C-inner-W: var(--side-bar-other-width);
   --side-bar-C-inner-H: 220px;
   
-  --side-bar-monochrome: 32,0,255;
+  --side-bar-monochrome: 248,248,248;
   --body-monochrome: 0,123,255;
   --header-monochrome: 0,86,179;
   --nav-monochrome: 0,98,204;
@@ -89,23 +89,23 @@ footer {
   padding: 5px;
 }
 
-#sidebar h3 {
+#side-bar h3 {
     margin: 0;
     padding: 10px;
     background-color: #ddd;
 }
 
-#sidebar ul {
+#side-bar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-#sidebar li {
+#side-bar li {
     padding: 8px;
 }
 
-#sidebar a {
+#side-bar a {
     text-decoration: none;
     color: #333;
 }
