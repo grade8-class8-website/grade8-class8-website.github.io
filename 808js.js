@@ -40,7 +40,8 @@ function get_set() {
     const scrollHeight = Math.max(bodyScrollHeight, htmlScrollHeight);
     const rootElement = document.querySelector(':root');
     rootElement.style.setProperty('--side-bar-height', scrollHeight + 'px');
-    console.log(scrollHeight);
+    rootElement.style.setProperty('--side-bar-width', pageWidth + 'px');
+    const pageWidth = window.innerWidth;
 }
 
 window.addEventListener('resize', () => {
@@ -50,7 +51,8 @@ window.addEventListener('resize', () => {
     const scrollHeight = Math.max(bodyScrollHeight, htmlScrollHeight);
     const rootElement = document.querySelector(':root');
     rootElement.style.setProperty('--side-bar-height', scrollHeight + 'px');
-    console.log(scrollHeight);
+    rootElement.style.setProperty('--side-bar-width', pageWidth + 'px');
+    const pageWidth = window.innerWidth;
 });
 
 
