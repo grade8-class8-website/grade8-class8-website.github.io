@@ -116,13 +116,19 @@ footer {
   border-bottom-right-radius: 8px;
 }
 
+@keyframes left{
+     0%{transform: translateX(-30px);display: none;}
+     100%{transform: translateX(0);display: block;}
+}
+
 .computer-open-bar:hover + a + div#side-bar,
 div#side-bar:hover{
   display: block;
-  width: 50%;
-  transform: translateX(0);
 }
 
+.computer-open-bar:hover + a + div#side-bar{
+  animation: left 1s forwards;
+}
 
 .mobile-top-bar{
   display: var(--mobile-media);
@@ -134,6 +140,9 @@ div#side-bar:hover{
     --mobile-media: block;
     --computer-media: none;
   }
-  #side-bar:target{display: block;}
+  #side-bar:target{
+    display: block;
+    animation: left 1s forwards;
+  }
 }
 
