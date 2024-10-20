@@ -1,25 +1,28 @@
 const sidebarcomputer = document.getElementsByClassName("computer-open-bar");
+const rootElement = document.querySelector(':root');
 
-function sidebaropen(){
+function sidebaropen() {
   document.getElementById("close-menu").style.display = "block";
 }
 
-
-function sidebarclose(){
+function sidebarclose() {
   document.getElementById("close-menu").style.display = "none";
-  event.target.r.style.setProperty('--into', 'leave');
-  var r = document.querySelector(':root');
+  rootElement.style.setProperty('--into', 'leave');
 }
 
-sidebarcomputer.addEventListener('mouseleave', function(event) {
-  event.target.r.style.setProperty('--into', 'leave');
-  var r = document.querySelector(':root');
+sidebarcomputer.forEach(element => {
+  element.addEventListener('mouseleave', function(event) {
+    rootElement.style.setProperty('--into', 'leave');
+  });
 });
 
-function get_set(){
-  var bodyheight = document.body.scrollWidth;
-  r.style.setProperty('--side-bar-height', bodyheight);
-  var r = document.querySelector(':root');
+function get_set() {
+  const bodyheight = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+  );
+  rootElement.style.setProperty('--side-bar-height', bodyheight + 'px');
 }
 
-get_set()
+get_set();
