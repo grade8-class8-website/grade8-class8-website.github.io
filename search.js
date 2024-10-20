@@ -112,12 +112,12 @@ function search() {
           const hotwordElement = document.createElement('div');
           hotwordElement.classList.add('hotword');
           hotwordElement.textContent = item.key;
-          const explanationElement = document.createElement('div');
-          explanationElement.classList.add('explanation');
-          explanationElement.textContent = item.value.explanation;
           const yearElement = document.createElement('div');
           yearElement.classList.add('year');
           yearElement.textContent = item.value.year;
+          const explanationElement = document.createElement('div');
+          explanationElement.classList.add('explanation');
+          explanationElement.textContent = item.value.explanation;
           resultItem.appendChild(hotwordElement);
           resultItem.appendChild(explanationElement);
           resultItem.appendChild(yearElement);
