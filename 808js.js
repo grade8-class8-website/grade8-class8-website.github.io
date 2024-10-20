@@ -2,6 +2,8 @@ const sidebarcomputer = document.getElementsByClassName("computer-open-bar");
 
 function sidebaropen() {
     document.getElementById("close-menu").style.display = "block";
+    const rootElement = document.querySelector(':root');
+    rootElement.style.setProperty('--into', 'into');
 }
 
 function sidebarclose() {
@@ -20,6 +22,13 @@ pseudoForEach(sidebarcomputer, element => {
     element.addEventListener('mouseleave', function(event) {
         const rootElement = document.querySelector(':root');
         rootElement.style.setProperty('--into', 'leave');
+    });
+});
+
+pseudoForEach(sidebarcomputer, element => {
+    element.addEventListener('mouseenter', function(event) {
+        const rootElement = document.querySelector(':root');
+        rootElement.style.setProperty('--into', 'enter');
     });
 });
 
