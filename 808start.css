@@ -98,6 +98,10 @@ footer {
   display: none;
 }
 
+/* ========== media ========= */
+
+@media only screen and (mix-width: 769px) {
+  
 .computer-open-bar{
   background: rgba(var(--black-monochrome),0.3);
   height: var(--side-bar-height);
@@ -128,6 +132,7 @@ div#side-bar:hover{
   color: white;
 }
 
+}
 
 
 .mobile-top-bar{
