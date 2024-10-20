@@ -100,7 +100,7 @@ footer {
 
 /* ========== media ========= */
 
-@media only screen and (mix-width: 769px) {
+@media only screen and (min-width: 769px) {
   
 .computer-open-bar{
   background: rgba(var(--black-monochrome),0.3);
