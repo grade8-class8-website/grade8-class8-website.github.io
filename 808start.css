@@ -2,7 +2,6 @@
   --side-bar-width: 10px;
   --side-bar-C-inner-W: var(--side-bar-width);
   --side-bar-C-inner-H: 220px;
-  --side-bar-vh: 100vh;
   
   --side-bar-monochrome: 32,0,255;
   --body-monochrome: 0,123,255;
@@ -12,7 +11,9 @@
   --black-monochrome: 25, 20, 16;
   
   --mobile-media: none;
-  --compute-media: block;
+  --computer-media: block;
+
+  --into: into;
 }
 
 body {
@@ -70,19 +71,18 @@ footer {
 
 .relative{position: relative;}
 .absolute{position: absolute;}
+
 #side-bar {
-  width: 50%;
+  width: 40%;
   top: 0;
   left: 0;
   z-index: 9;
   margin: 0;
   border: none;
   background-color: rgb(var(--side-bar-monochrome));
-  height: var(--side-bar-vh);
+  height: var(--side-bar-height);
   overflow-x: hidden;
   overflow-y: auto;
-  transform: translateX(var(--side-bar-width)*2);
-  transition: transform 2s;
   padding: 5px;
 }
 
@@ -90,14 +90,14 @@ footer {
   right: 0;
   top: 0;
   width: 50%;
-  height: var(--side-bar-vh);
+  height: var(--side-bar-height);
   opacity: 0.3;
   display: none;
 }
 
 .computer-open-bar{
   background: rgba(var(--black-monochrome),0.3);
-  height: var(--side-bar-vh);
+  height: var(--side-bar-height);
   top: 0;
   left: 0;
   border-top-right-radius: 8px;
@@ -110,25 +110,29 @@ footer {
   background-color: rgb(var(--gray-monochrome));
   height: var(--side-bar-C-inner-H);
   width: var(--side-bar-C-inner-W);
-  top: calc(var(--side-bar-vh)/2 - var(--side-bar-C-inner-H)/2);
+  top: calc(var(--side-bar-height)/2 - var(--side-bar-C-inner-H)/2);
   left: 4px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
 
-@keyframes left{
-     0%{transform: translateX(-30px);display: none;}
-     100%{transform: translateX(0);display: block;}
+@keyframes into{
+  0%{transform: translateX(calc(var(--side-bar-height)*0.4));display: none;}
+  100%{transform: translateX(0);display: block;}
+}
+
+@keyframes leave{
+  0%{transform: translateX(0);display: block;}
+  100%{transform: translateX(calc(var(--side-bar-height)*0.4));display: none;}
 }
 
 .computer-open-bar:hover + a + div#side-bar,
 div#side-bar:hover{
+  animation: var(--into) 1s ease-in forwards;
   display: block;
 }
 
-.computer-open-bar:hover + a + div#side-bar{
-  animation: left 1s forwards;
-}
+
 
 .mobile-top-bar{
   display: var(--mobile-media);
