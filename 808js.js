@@ -30,7 +30,7 @@ function get_set() {
     const htmlScrollHeight = document.documentElement.scrollHeight;
     const scrollHeight = Math.max(bodyScrollHeight, htmlScrollHeight);
     const rootElement = document.querySelector(':root');
-    rootElement.style.setProperty('--side-bar-height', scrollHeight);
+    rootElement.style.setProperty('--side-bar-height', scrollHeight + 'px');
     console.log(scrollHeight);
 }
 
@@ -40,7 +40,7 @@ window.addEventListener('resize', () => {
     const htmlScrollHeight = document.documentElement.scrollHeight;
     const scrollHeight = Math.max(bodyScrollHeight, htmlScrollHeight);
     const rootElement = document.querySelector(':root');
-    rootElement.style.setProperty('--side-bar-height', scrollHeight);
+    rootElement.style.setProperty('--side-bar-height', scrollHeight + 'px');
     console.log(scrollHeight);
 });
 
