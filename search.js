@@ -1,6 +1,4 @@
 
-
-
     const hotword = {
       '神马': { year: '2019', explanation: '表示震惊' },
       '阿米诺斯': { year: '2024', explanation: '骂人' },
@@ -100,7 +98,7 @@
       return results.length > 0? results : null;
     }
 
-    function search() {
+function search() {
       const input = document.getElementById('searchInput').value;
       const results = searchByChar(input);
       const resultsDiv = document.getElementById('results');
@@ -120,6 +118,10 @@
           const yearElement = document.createElement('span');
           yearElement.classList.add('year');
           yearElement.textContent = item.value.year;
+          resultItem.appendChild(hotwordElement);
+          resultItem.appendChild(explanationElement);
+          resultItem.appendChild(yearElement);
+          resultsDiv.appendChild(resultItem);
+        });
       }
-
-
+}
