@@ -89,7 +89,7 @@ footer {
 .close-menu{
   right: 0;
   top: 0;
-  width: 50%;
+  width: 60%;
   height: var(--side-bar-height);
   opacity: 0.3;
   display: none;
