@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2048 Game</title>
+<style>
+    #game-container {
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    #score-container {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    #grid-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+        #controls {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    .control-btn {
+        width: 50px;
+        height: 50px;
+        background-color: #8f7a66;
+        color: white;
+        border-radius: 50%;
+        line-height: 50px;
+        text-align: center;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+
+    .grid-row {
+        display: flex;
+        width: 100%;
+    }
+
+    .grid-cell {
+        width: 100px;
+        height: 100px;
+        background-color: #ccc0b3;
+        margin: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #776e65;
+    }
+</style>
+</head>
+<body>
+<div id="game-container">
+    <div id="score-container">Score: <span id="score">0</span></div>
+    <div id="grid-container">
+    </div>
+    <div id="controls">
+    <div class="control-btn" id="up">↑</div>
+    <div class="control-btn" id="left">←</div>
+    <div class="control-btn" id="right">→</div>
+    <div class="control-btn" id="down">↓</div>
+</div>
+</div>
+<script>
+    const gridContainer = document.getElementById('grid-container');
+    const scoreDisplay = document.getElementById('score');
+    let score = 0;
+    let grid = [];
+
+    function createGrid() {
+        for (let r = 0; r < 3; r++) {
+            let row = [];
+            let rowElement = document.createElement('div');
+            rowElement.className = 'grid-row';
+            for (let c = 0; c < 3; c++) {
+                let cell = document.createElement('div');
+                cell.className = 'grid-cell';
+                rowElement.appendChild(cell);
+                row.push({ cell, value: 0 });
+            }
+            gridContainer.appendChild(rowElement);
+            grid.push(row);
+        }
+    }
+
+    function addNumber() {
+        let emptyCells = [];
+        for (let r = 0; r < 3; r++) {
+            for (let c = 0; c < 3; c++) {
+                if (grid[r][c].value === 0) {
+                    emptyCells.push({ r, c });
+                }
+            }
+        }
+        if (emptyCells.length > 0) {
+            let { r, c } = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+            grid[r][c].value = Math.random() < 0.5 ? 2 : 4;
+            grid[r][c].cell.innerText = grid[r][c].value;
+        }
+    }
+
+    function updateScore(points) {
+        score += points;
+        scoreDisplay.innerText = score;
+    }
+
+    function slideCells(row) {
+        let newRow = row.filter(cell => cell.value !== 0);
+        for (let i = 0; i < newRow.length - 1; i++) {
+            if (newRow[i].value === newRow[i + 1].value) {
+                newRow[i].value *= 2;
+                newRow[i + 1].value = 0;
+                updateScore(newRow[i].value);
+            }
+        }
+        return newRow.concat(row.filter(cell => cell.value === 0));
+    }
+
+    function moveCells(direction) {
+        let originalGrid = JSON.parse(JSON.stringify(grid));
+        if (direction === 'left' || direction === 'right') {
+            for (let r = 0; r < 3; r++) {
+                let row = grid[r].slice();
+                if (direction === 'left') {
+                    row = slideCells(row);
+                } else {
+                    row.reverse();
+                    row = slideCells(row);
+                    row.reverse();
+                }
+                grid[r] = row;
+            }
+        } else if (direction === 'up' || direction === 'down') {
+            for (let c = 0; c < 3; c++) {
+                let column = [];
+                for (let r = 0; r < 3; r++) {
+                    column.push(grid[r][c]);
+                }
+                if (direction === 'up') {
+                    column = slideCells(column);
+                } else {
+                    column.reverse();
+                    column = slideCells(column);
+                    column.reverse();
+                }
+                for (let r = 0; r < 3; r++) {
+                    grid[r][c] = column[r];
+                }
+            }
+        }
+
+        if (JSON.stringify(originalGrid) !== JSON.stringify(grid)) {
+            addNumber();
+        }
+
+        // Update the        // Update the UI
+        for (let r = 0; r < 3; r++) {
+            for (let c = 0; c < 3; c++) {
+                grid[r][c].cell.innerText = grid[r][c].value ? grid[r][c].value.toString() : '';
+            }
+        }
+    }
+
+    function handleKeyDown(event) {
+        switch (event.key) {
+            case 'ArrowLeft':
+                moveCells('left');
+                break;
+            case 'ArrowUp':
+                moveCells('up');
+                break;
+            case 'ArrowRight':
+                moveCells('right');
+                break;
+            case 'ArrowDown':
+                moveCells('down');
+                break;
+        }
+    }
+
+    function initGame() {
+        createGrid();
+        addNumber();
+        addNumber();
+        document.addEventListener('keydown', handleKeyDown);
+    }
+
+    initGame();
+    
+    function handleButtonClick(direction) {
+    moveCells(direction);
+}
+
+document.getElementById('up').addEventListener('click', function() { handleButtonClick('up'); });
+document.getElementById('left').addEventListener('click', function() { handleButtonClick('left'); });
+document.getElementById('right').addEventListener('click', function() { handleButtonClick('right'); });
+document.getElementById('down').addEventListener('click', function() { handleButtonClick('down'); });
+
+
+   
+</script>
+</body>
+</html>
